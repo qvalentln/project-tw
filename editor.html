@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="editor.css">
+        <script src="editor.js" defer></script>
+    </head>
+
+    <body>
+        <div class="taskbar">
+            <a id="logo" href="index.html">
+                <img src="images/logonpp.png" alt="Notepad++ logo">
+            </a>
+            <p id="tryit">Try our text editor live!</p>
+            <button id="saveBtn" class="save-button" onclick="saveFile()">Download CPP</button>
+            
+
+        </div>
+
+        <div class="editor-wrapper">
+            <div class="main-area">
+            <div class="gutter" id="gutter">1</div>
+            <div class="input-container">
+                <pre id="highlighting" aria-hidden="true"></pre>
+                <textarea id="editing" spellcheck="false" placeholder="// Start typing..."></textarea>
+            </div>
+        </div>
+    <!--
+    <div class="mobile-toolbar">
+        <button class="tool-btn" onclick="insert('    ')">TAB</button>
+        <button class="tool-btn" onclick="insert('{}')">{}</button>
+        <button class="tool-btn" onclick="insert('()')">()</button>
+        <button class="tool-btn" onclick="insert(';')">;</button>
+        <button class="tool-btn" onclick="insert('<>')"><></button>
+        <button class="tool-btn" onclick="insert('\&quot;\&quot;')">""</button>
+        <button class="tool-btn" onclick="insert('[]')">[]</button>
+    </div>
+-->
+    <div class="status-bar">
+        <div>UTF-8</div>
+        <div>Line <span id="ln">1</span>, Col <span id="col">1</span></div>
+    </div>
+</div>
+    </body>
+</html>

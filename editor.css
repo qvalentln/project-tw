@@ -1,0 +1,179 @@
+/* global variables */
+:root {
+    --bg: #282a36; 
+    --gutter-bg: #21222c; 
+    --text: #f8f8f2;
+    --accent: #44475a;
+    --font-desktop: 1.5rem; /*font sizes*/
+    --font-mobile: 1.75rem; 
+    --lh-desktop: 1.5rem; /*line heights*/
+    --lh-mobile: 1.75rem;   
+    
+    
+}
+
+/* base styles */
+.save-button {
+    margin-left: auto; /* push the button to the right side of the bar */
+    background: #2c4a28;
+    color: #e6e6e6;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-family:'Consolas';
+    padding: 1.25rem 1.25rem !important;
+    font-size: 1.25rem !important; 
+    border-radius: 8px !important;
+}
+
+.save-button:hover { background: #009f63; color: #1a1a1a;}
+
+pre, textarea{
+    font-size: var(--font-desktop) !important;
+
+    margin: 0; padding: 15px; border: 0; 
+    width: 100%; height: 100%;
+    position: absolute; top: 0; left: 0;
+    font-family: inherit; 
+    line-height: var(--lh-desktop); 
+    white-space: pre; tab-size: 4; 
+    overflow: auto;
+}
+
+/* color rules - c++ highlighting*/
+.token-comment { color: var(--comment); font-style: italic; }
+.token-keyword { color: var(--keyword); font-weight: bold; }
+.token-function { color: var(--func); }
+.token-type { color: var(--type); }
+.token-string { color: #f1fa8c; } /* yellow for strings */
+
+
+* { box-sizing: border-box; }
+
+body, html { 
+    margin: 0; padding: 0; 
+    height: 100dvh; /* dynamic height prevents mobile browser UI overlap */
+    width: 100vw;
+    background: #1a1b26; 
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace; 
+    display: flex; flex-direction: column; 
+    overflow: hidden;
+}
+
+.taskbar {
+    display: flex; align-items: center; 
+    padding: 20px 15px;
+    background: #21222c; 
+    border-bottom: 1px solid var(--accent);
+    flex-shrink: 0;
+}
+#tryit{
+    font-size:1.33rem;
+}
+
+#logo img { height: 3.5rem; width: auto; }
+p { color: #6272a4; margin: 0; margin-left: 15px; font-size: 1.4rem !important; }
+
+/*Editor Wrapper*/
+.editor-wrapper {
+    display: flex; flex-direction: column; 
+    flex-grow: 1; /* fills remaining space */
+    overflow: hidden;
+}
+
+.main-area { 
+    display: flex; flex-grow: 1; 
+    position: relative; overflow: hidden; 
+}
+
+/*Line Number Gutter*/
+.gutter {
+    width: 50px; background: var(--gutter-bg); color: #6272a4;
+    padding-top: 15px; text-align: right; padding-right: 10px;
+    font-size: var(--font-desktop); line-height: var(--lh-desktop);
+    border-right: 1px solid var(--accent); 
+    overflow: hidden; /* scroll synced via js */
+}
+
+.input-container { position: relative; flex-grow: 1; height: 100%; }
+
+/*textarea & syntax highlight*/
+
+textarea { 
+    color: transparent; background: transparent; 
+    caret-color: #50fa7b; 
+    z-index: 1; outline: none; resize: none;
+}
+
+pre { color: var(--text); z-index: 0; pointer-events: none; }
+
+
+.status-bar {
+    background: #191a21; color: #6272a4; 
+    padding: 12px 15px; 
+    font-size: 1.44rem;
+    display: flex; justify-content: space-between;
+    border-top: 1px solid var(--accent);
+    flex-shrink: 0;
+}
+
+/* RESPONSIVE QUERY */
+@media screen and (max-width: 960px) {
+    :root {
+        --m-font: 1.75rem !important;
+        --m-lh: 1.75rem !important; 
+    }
+
+    .save-button {
+        padding: 30px 30px !important;
+        font-size: 1.75rem !important; 
+        border-radius: 8px !important;
+    }
+
+    pre, textarea{
+        font-size: var(--font-mobile) !important;
+    }
+
+    
+    /*.gutter { display: none !important; }*/
+
+    /* scale the textarea and the placeholder */
+    #editing {
+        padding: 30px 20px !important; /* more breathing room */
+        font-size: var(--m-font) !important;
+        line-height: var(--m-lh) !important;
+    }
+
+    /* target the placeholder message specifically... */
+    #editing::placeholder {
+        font-size: var(--m-font) !important;
+        opacity: 0.6;
+    }
+
+    /* scale the highlighting layer and every colored span inside it */
+    #highlighting, 
+    #highlighting * { 
+        font-size: var(--m-font) !important;
+        line-height: var(--m-lh) !important;
+        font-family: 'Consolas', monospace !important;
+    }
+
+    #highlighting {
+        padding: 30px 20px !important;
+        margin: 0 !important;
+        /* ensure it covers the same area as the textarea exactly */
+    }
+
+    /* scale UI elements to be touch-friendly */
+    .status-bar {
+        padding: 18px 20px !important;
+        font-size: 16px !important;
+        height: auto !important;
+    }
+
+    .taskbar { 
+        padding: 15px !important; 
+        
+    }
+
+}

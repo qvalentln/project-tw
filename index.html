@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+
+    <head>
+
+        <title>Notepad++</title>
+
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="index_footer.css">
+        <script src="index.js" defer></script>
+        <link rel="icon" type="image/png" href="images/nppicon.png">
+
+
+        <!--fonturi-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+    </head>
+
+    <body id="landing-page">
+    <!--
+    <div class="pointer"></div>
+    -->
+
+
+    <header>
+        <section>
+            <a id="logo">
+                <img src="images/logonpp.png" alt="Notepad++ logo">
+            </a>
+            <nav>
+                <div class="dropdown">
+
+                    <a href="#">Download</a>
+
+                    <div class="dropdown-list">
+                        <a href="/">Latest Release</a>
+                        <a href="/">Testing Release</a>
+                        <a href="/">Older versions</a>
+                    </div>
+
+                </div>
+
+                <span class="vert"></span>
+
+                <a href="editor.html">Try it!</a>
+
+            </nav>
+
+        </section>
+    </header>
+        <div id="present">
+            <section>
+                <div id="title">
+                    <!--dummy h1, very cool technique...-->
+                    <h1 class="ghost-text">s</h1>
+                    <h1><span class="typewriter-target"></span></h1>
+                    
+                </div>
+
+                <div class="title subtitle"><span><em>Reject bloated IDEs, embrace light text editors!</em></span></div>
+
+            </section>
+
+            <section class="app-demo">
+
+                <div class="wrap">
+                    <!--
+                    <img id="app-demo-title-bar" src="images/win_titlebar.png" alt="Notepad++ Title Bar" height="28" width="1200">
+                --> 
+                        <img id="app-demo-ss" src="images/darkmode.gif" alt="A Notepad++ Demo" width="1200">
+
+                </div>
+
+            </section>
+        </div>
+
+        <main>
+            <button id="theme-switch" type="button" data-theme-toggle aria-label="Change to light theme">
+                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q10 0 20.5.67 10.5.66 24.17 2-37.67 31-59.17 77.83T444-660q0 90 63 153t153 63q53 0 99.67-20.5 46.66-20.5 77.66-56.17 1.34 12.34 2 21.84.67 9.5.67 18.83 0 150-105 255T480-120Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e3e3e3"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-446.67H40v-66.66h160v66.66Zm720 0H760v-66.66h160v66.66ZM446.67-760v-160h66.66v160h-66.66Zm0 720v-160h66.66v160h-66.66ZM260-655.33l-100.33-97 47.66-49 96 100-43.33 46Zm493.33 496-97.66-100.34 45-45.66 99.66 97.66-47 48.34Zm-98.66-541.34 97.66-99.66 49 47L702-656l-47.33-44.67ZM159.33-207.33 259-305l46.33 45.67-97.66 99.66-48.34-47.66Z"/></svg>
+            </button>
+
+            <section class="details">
+
+                <section>
+                    <div class="feat grp">
+
+                        <h2 class="centerit">Why choose <span class="npphigh">Notepad++</span>?</h2>
+
+                    </div>
+
+                    <div class="feat grp">
+
+                        <div class="colon full txt">
+                            <h2>Lightweight and portable.</h2>
+
+                            <p>
+                            Notepad++ is written in C++ and uses pure Win32 API and STL implementation which ensures a higher execution
+                            speed and smaller program size. When using less CPU power, the PC can throttle down and reduce power consumption,
+                            resulting in a greener environment.
+                            </p>
+                            <!--INSERT A GRAD ON "greener"-->
+
+                        </div>
+
+                    </div>
+
+                    <div class="feat grp">
+
+                        <div class="colon half imag">
+                            <picture>
+                                <img src="images/distraction.png" class="screenshot" alt="Notepad++ Distraction Mode">
+                            </picture>
+                        </div>
+
+                        <div class="colon half txt">
+                            <h2>Where focus meets flow</h2>
+                            <p>
+                                Step into a clean, uncluttered workspace where every line of code takes center stage,
+                                distractions fade away, and your focus flows effortlessly.</p>
+                        </div>
+
+                    </div>
+                    <div class="feat grp">
+
+                        <div class="colon half txt">
+                            <h2>Multi-Language Syntax Highlighting</h2>
+
+                            <p>
+                                Support for dozens of programming and markup languages, each with precise syntax coloring.
+                                Switch between languages effortlessly and instantly spot errors, structure, and patterns.
+                            </p>
+                        </div>
+
+                        <div class="colon half imag">
+                            <picture>
+                                <img src="images/syntax.png" class="screenshot" alt="Notepad++ Syntax Highlighting">
+                            </picture>
+                        </div>
+
+                    </div>
+
+                    <div class="feat grp">
+
+                        <div class="colon full txt">
+                            <h2>More than an editor - It's what you make it</h2>
+                            <p>
+                                Notepad++ isn’t just a text editor, it’s a customizable coding powerhouse.
+                                With its rich plugin ecosystem, you can transform it into whatever you need:
+                                a debugger, translator, formatter, or even a mini IDE.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="feat grp">
+
+                        <div class="colon half imag">
+                            <picture>
+
+                                <img src="images/compete.png"  class="screenshot" alt="CP Demo">
+                            </picture>
+                        </div>
+
+                        <div class="colon half txt">
+                            <h2>Write it. Run it. Win it.</h2>
+                            <p>
+                                Notepad++ is widely used in the competitive programming community as it is a lightweight
+                                and powerful text-editor. Low-performance requirements, bloat-free software and its integration with
+                                other light tools and plugins is what makes Notepad++ extremely loved by competitive programmers around the globe.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="feat grp">
+
+                        <div class="colon half txt">
+
+                            <h2>Dark Mode, Bright Focus</h2>
+
+                            <p>
+                                Notepad++’s dark mode wraps your workspace in a smooth, eye-friendly theme that keeps glare low and concentration high.
+                                Perfect for late-night coding sprints, it turns your editor into a calm, stylish command center where your code glows—and your eyes don’t.
+                            </p>
+
+                        </div>
+
+                        <div class="colon half imag">
+
+                            <picture>
+
+                                <img src="images/dark.png" class="screenshot" alt="NP++ dark theme">
+                            </picture>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </section>
+        </main>
+
+        <footer>
+            <section>
+                <div class="footst">
+                    <p><a href="https://github.com/qvalentln">qvalentln</a></p>
+
+                    <p>Check it out!</p>
+
+                
+
+
+                </div>
+
+                    <!--validator css
+
+                    <p>
+                        <a href="https://jigsaw.w3.org/css-validator/check/referer">
+                            <img style="border:0;width:88px;height:31px"
+                                 src="https://jigsaw.w3.org/css-validator/images/vcss"
+                                 alt="Valid CSS!" />
+
+                        </a>
+                    </p>
+
+                    -->
+
+            </section>
+        </footer>
+    </body>
+</html>

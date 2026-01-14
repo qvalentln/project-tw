@@ -1,0 +1,46 @@
+/*FOOTER??*/
+
+
+footer>section{
+    width: auto;
+    margin: 0 auto;
+    position: relative;
+    background-color:var(--foot-bg);
+    padding-top: 0.5%;
+    padding-left:5%;
+    /*
+    background-repeat: no-repeat;
+    background-position: right 32px top 0;
+    background-size: 256px auto;
+    */
+    min-height: 128px;
+}
+
+footer p{
+    color:#cccccc;
+}
+footer{
+    background-color:var(--foot-bg);
+}
+
+.footst a{
+    color:var(--foot-qv-clr);
+    text-decoration: none;
+}
+.footst  a:visited{
+    color:var(--foot-qv-active);
+
+}
+.footst a:hover{
+    color:var(--foot-qv-hover);
+}
+.footst a:active{
+    color:var(foot-qv-active);
+}
+
+/*
+footer>section {
+    background-image: none;
+}
+
+ */
