@@ -20,7 +20,7 @@ function saveFile() {
     
     // create an invisible link to trigger the download
     const anchor = document.createElement('a');
-    anchor.download = "code.cpp"; // you can change this extension
+    anchor.download = "code.cpp"; // can change CPP extension
     anchor.href = window.URL.createObjectURL(blob);
     anchor.target = "_blank";
     anchor.style.display = "none"; 
@@ -67,11 +67,12 @@ function update() {
     gutter.scrollTop = editing.scrollTop;
 
     // syntax highlighting
-    let html = text.replace(/&/g, "&amp;").replace(/</g, "&lt;");
-    html = html.replace(/\/\/.*/g, '<span class="token-comment">$&</span>');
-    html = html.replace(/\b(int|bool|return|if|for|while|void)\b/g, '<span class="token-keyword">$&</span>');
+    
+    let html = text.replace(/&/g, "&amp;").replace(/</g, "&lt;"); //escaping
+    html = html.replace(/\/\/.*/g, '<span class="token-comment">$&</span>'); //comment highlighting
+    html = html.replace(/\b(int|bool|return|if|for|while|void)\b/g, '<span class="token-keyword">$&</span>'); //keywords & data types
     html = html.replace(/\b(point|vector|std|string)\b/g, '<span class="token-type">$&</span>');
-    html = html.replace(/\b[a-zA-Z_]\w*(?=\()/g, '<span class="token-func">$&</span>');
+    html = html.replace(/\b[a-zA-Z_]\w*(?=\()/g, '<span class="token-func">$&</span>'); //function detection
     
     highlighting.innerHTML = html + (text.endsWith("\n") ? "\n " : "");
 

@@ -8,7 +8,8 @@
     --font-mobile: 1.75rem; 
     --lh-desktop: 1.5rem; /*line heights*/
     --lh-mobile: 1.75rem;   
-    
+    --comment: yellow;
+    --func: pink;
     
 }
 
@@ -43,7 +44,7 @@ pre, textarea{
 /* color rules - c++ highlighting*/
 .token-comment { color: var(--comment); font-style: italic; }
 .token-keyword { color: var(--keyword); font-weight: bold; }
-.token-function { color: var(--func); }
+.token-func { color: var(--func); }
 .token-type { color: var(--type); }
 .token-string { color: #f1fa8c; } /* yellow for strings */
 
@@ -74,7 +75,7 @@ body, html {
 #logo img { height: 3.5rem; width: auto; }
 p { color: #6272a4; margin: 0; margin-left: 15px; font-size: 1.4rem !important; }
 
-/*Editor Wrapper*/
+/*editor wrapper*/
 .editor-wrapper {
     display: flex; flex-direction: column; 
     flex-grow: 1; /* fills remaining space */
@@ -86,7 +87,7 @@ p { color: #6272a4; margin: 0; margin-left: 15px; font-size: 1.4rem !important; 
     position: relative; overflow: hidden; 
 }
 
-/*Line Number Gutter*/
+/*line number gutter*/
 .gutter {
     width: 50px; background: var(--gutter-bg); color: #6272a4;
     padding-top: 15px; text-align: right; padding-right: 10px;

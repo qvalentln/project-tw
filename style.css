@@ -1,34 +1,8 @@
 
-/*ADD POINTER STYLE, INTEGRATED WITH JS
-    make it work only on pcs
-*/
-/*
-.pointer {
-    height: 30px;
-    width: 30px;
-    background: radial-gradient(circle, rgba(0,255,0,0.44) 0%,rgba(0,255,128,0.22) 40%, rgba(0,255,0,0) 75%);
-    background-repeat: no-repeat;
-    background-position: center;
-    position: fixed;
-    z-index:9999999;
-}
-*/
-/**/
-
-
-
 /*STYLES*/
 
 
 /*culori custom pentru light/dark switch*/
-/*
-:root{
-    //global properties that won't change with the theme
-
-
-
-}
-*/
 [data-theme="light"] {
     --button-base:white;
     --button-variant: #e8e9ed;
@@ -196,11 +170,11 @@ header {
     background-color: var(--head-bg);
     padding: 18px 0 12px;
 }
-/*after are sens mai mult aici :)))*/
+/*header fix*/
 header > section:after {
-    content: "";
-    display: table;
-    clear: both;
+    content: ""; /*pentru render*/
+    display: table; /*comportament de table, ocupa toata lungimea*/
+    clear: both; /*forteaza asezarea lui sub orice element floated*/
 }
 
 a#logo {
@@ -324,7 +298,7 @@ nav a{
 
 
 header nav .dropdown .dropdown-list a {
-    margin-left: 0 ; /*!important toate 3?*/
+    margin-left: 0 ; 
     display: block ;
     text-align: left ;
 }
@@ -409,6 +383,10 @@ div#present section.app-demo {
 #title h1{
     grid-area: 1 / 1; /*both h1s occupy the same spot*/ 
 }
+/*rezolv problema cu modificarea 
+    inaltimii present atunci cand nu am titlu in animatie
+    
+*/
 .ghost-text{
     font-size: 3.25rem;
     visibility:hidden;
@@ -420,7 +398,7 @@ div#present section.app-demo {
 #title h1 .typewriter-target {
     font-size: 3.25rem;  
     line-height: 1.7;      
-    display: inline-block; /* helps some scripts calculate width better */
+    display: inline-block; /* ajuta la calcularea latimii mai tarziu */
 }
 
 div#present section.app-demo div.wrap {
@@ -467,15 +445,16 @@ span.npphigh {
     background-size: 200% 200%;
 
     /*rendering content in Chromium and Safari browsers*/
+    
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-
+    
 }
 
 
 
-/**/
+/*SECTION DETAILS*/
 section.details h2.centerit {
     margin-top: 0;
     text-align: center;
@@ -530,10 +509,12 @@ div.feat.grp {
 .grp:after {
     /* block formatting context */
     content: "";
+    /*prevents margin collapsing*/
     display: table;
 }
 .grp:after {
-
+    /*clear floats so the parent doesnt
+     collapse to 0*/
     clear: both;
 }
 .grp {
@@ -566,7 +547,7 @@ div.feat.grp {
 
 
 
-/*FOOTER??*/
+/*FOOTER STYLES*/
 
 
 
