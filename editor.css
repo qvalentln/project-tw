@@ -9,7 +9,8 @@
     --lh-desktop: 1.5rem; /*line heights*/
     --lh-mobile: 1.75rem;   
     --comment: yellow;
-    --func: pink;
+    --func: magenta;
+    --type: cyan;
     
 }
 

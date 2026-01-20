@@ -13,6 +13,8 @@ const randomColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
 root.style.setProperty("--keyword", randomColor);
 
 
+
+
 function saveFile() {
     const text = document.getElementById('editing').value;
     // create a blob of the data
@@ -30,9 +32,19 @@ function saveFile() {
     document.body.removeChild(anchor);
 }
 
-
-function insert(chars) {
-    const textarea = document.getElementById('editing');
+//eve...
+function insert(chars, event) {
+    //...
+    if (event) {
+        event.stopPropagation();
+        // butonul pe care s a dat click
+        const buttonPressed = event.currentTarget;
+        buttonPressed.style.transform = "scale(0.95)";
+        setTimeout(() => buttonPressed.style.transform = "", 100);
+    }
+    //...
+    
+    //const textarea = document.getElementById('editing');
     const start = textarea.selectionStart;
     const end = textarea.selectionEnd;
     const value = textarea.value;
@@ -45,7 +57,7 @@ function insert(chars) {
     textarea.selectionStart = textarea.selectionEnd = start + moveCursor;
 
     textarea.focus();
-    update(); // call your existing update function to sync the highlighting
+    update(); // call existing update function to sync the highlighting
 }
 
 
@@ -60,6 +72,7 @@ const colShow = document.querySelector("#col");
 
 function update() {
     let text = editing.value;
+    
 
     // sync scrolling
     highlighting.scrollTop = editing.scrollTop;
@@ -70,8 +83,8 @@ function update() {
     
     let html = text.replace(/&/g, "&amp;").replace(/</g, "&lt;"); //escaping
     html = html.replace(/\/\/.*/g, '<span class="token-comment">$&</span>'); //comment highlighting
-    html = html.replace(/\b(int|bool|return|if|for|while|void)\b/g, '<span class="token-keyword">$&</span>'); //keywords & data types
-    html = html.replace(/\b(point|vector|std|string)\b/g, '<span class="token-type">$&</span>');
+    html = html.replace(/\b(else|const|return|if|for|while|do|cout|cin|using)\b/g, '<span class="token-keyword">$&</span>'); //keywords & data types
+    html = html.replace(/\b(point|vector|std|string|char|float|double|long|void|bool|int)\b/g, '<span class="token-type">$&</span>');
     html = html.replace(/\b[a-zA-Z_]\w*(?=\()/g, '<span class="token-func">$&</span>'); //function detection
     
     highlighting.innerHTML = html + (text.endsWith("\n") ? "\n " : "");
